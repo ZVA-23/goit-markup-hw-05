@@ -156,7 +156,7 @@ html {
 
     width: 100%;
     height: 4px;
-    left: 0;
+    left: -1;
     bottom: 0;
     background-color: var(--accent-color);
     border-radius: 4px;
@@ -787,26 +787,20 @@ html {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.25);
 
-    z-index: 2;
+    z-index: 100;
     opacity: 1;
-    visibility: visible;
+    /* visibility: visible; */
     pointer-events: initial;
 
-    transform: translate(-50% -50%) scale(0.9);
-    transition: opasity var(--anim-slov), visibility var(--anim-slov);
+    transform: translate(-50% -50%) scale(1);
+    transition: all transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
     opacity: 0;
-    visibility: hidden;
+    /* visibility: hidden; */
     pointer-events: none;
 }
-
-.backdrop.is-hidden .modal {
-    transform: translate(-50% -50%) scale(0.9);
-    transition: transform var(--anim-slov),
-        visibility var(--anim-slov);
-} 
 
 .modal {
     position: absolute;
@@ -818,10 +812,17 @@ html {
     background-color: var(--primary-white-color);
 
     transform: translate(-50%, -50%) scale(1);
-    transition: transform var(--anim-slov);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--anim-slov); */
 
     border-radius: 4px 0px, 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn {
@@ -835,9 +836,15 @@ html {
     background-color: var(--primary-white-color);
     border-radius: 50%;
     border: 1px solid #0000001A;
+    padding: 5px;
 }
 
 .modal-btn-icon {
     display: inline-block;
     flex-shrink: 0;
+    transition: fill var(--anim-slov);
+}
+
+.modal-btn-icon:hover {
+    fill: var(--accent-color);
 }
