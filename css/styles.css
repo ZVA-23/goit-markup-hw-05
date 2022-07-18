@@ -448,7 +448,8 @@ html {
     border-radius: 50%;
     fill: #AFB1B8;
 
-    transition: color var(--anim-slov);
+    transition: fill var(--anim-slov),
+        background-color var(--anim-slov);
 }
 
 .team-social-icon {
@@ -484,7 +485,8 @@ html {
     border: 1px solid rgba(175, 177, 184, 1);
     border-radius: 4px;
 
-    transition: color var(--anim-slov);
+    transition: fill var(--anim-slov),
+        border var(--anim-slov);
 }
 
 .client-icon {
@@ -553,7 +555,9 @@ html {
     line-height: 1.62;
     text-align: center;
 
-    transition: color var(--anim-slov);
+    transition: color var(--anim-slov),
+        background-color var(--anim-slov),
+        box-shadow var(--anim-slov);
 }
 
 .secondary-button:hover,
@@ -762,7 +766,7 @@ html {
     border-radius: 50%;
     fill: var(--primary-white-color);
 
-    transition: color var(--anim-slov);
+    transition: background-color var(--anim-slov);
 }
 
 .cummon-social-icon {
